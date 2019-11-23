@@ -184,6 +184,8 @@ class NeuralNetwork:
         sq_error = 1
         iterations = 1
 
+        print("Initial random network: ", output)
+
         while sq_error > self.min_error_percentage:
             sq_error = 0
             for i in range(len(self.digits)):
@@ -198,7 +200,10 @@ class NeuralNetwork:
         self.output_data = output
         end = time.time()
         elapsed = end - start
-        print("Trained finished in ", elapsed, " seconds")
+        print("Trained finished in: ", elapsed, " seconds")
+        print("Total iterations: ", iterations)
+        print("Error percentage: ", sq_error)
+        print("Output result: ", self.output_data)
 
     def guessWith(self, output):
         index = 0
